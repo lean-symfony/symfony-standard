@@ -5,6 +5,8 @@ services:
     image: php:fpm
     volumes:
       - ${SYMFONY_PROJECT_ROOT}/:/var/www/project
+    links:
+      - db
   web:
     image: nginx
     ports:
@@ -15,3 +17,9 @@ services:
       - ./docker/nginx/project.conf:/etc/nginx/conf.d/default.conf
     links:
       - php
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - ./docker/mysql/data:/var/lib/mysql

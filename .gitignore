@@ -1,6 +1,10 @@
 # Environment
 /.env
 
+# Runtime data
+/docker/mysql/data/*
+!/docker/mysql/data/.gitkeep
+
 # IDE/Editor settings
 /.idea/
 
