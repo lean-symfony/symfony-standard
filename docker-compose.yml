@@ -5,3 +5,12 @@ services:
     image: php:fpm
     volumes:
       - ./:/var/www/project
+  web:
+    image: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./:/var/www/project
+      - ./docker/nginx/project.conf:/etc/nginx/conf.d/default.conf
+    links:
+      - php
