@@ -2,7 +2,7 @@ version: '2'
 
 services:
   php:
-    image: php:fpm
+    build: docker/php
     volumes:
       - ${SYMFONY_PROJECT_ROOT}/:/var/www/project
     links:
