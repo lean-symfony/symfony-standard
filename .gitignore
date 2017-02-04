@@ -1,3 +1,7 @@
+
+# IDE/Editor settings
+/.idea/
+
 /app/config/parameters.yml
 /build/
 /phpunit.xml
